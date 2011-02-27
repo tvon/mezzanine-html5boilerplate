@@ -29,7 +29,7 @@
     }
     
     .editable-highlight {
-        border: 1px solid #eee;
+        border: 1px solid #e0e0e0;
     }
 
     #editable-toolbar, .editable-link {
@@ -39,7 +39,8 @@
         cursor: pointer;
         white-space: nowrap;
         
-        border: 1px solid #ccc;
+        border-bottom-right-radius: 5px;
+        border: none;
         
         line-height: 1em;
         padding: 4px;
@@ -48,10 +49,15 @@
         
         background: #000;
         
-        background: -moz-linear-gradient(top, #999, #000);
-        background: -webkit-gradient(linear,left top, left bottom, from(#999), to(#000));
-        filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#999999', EndColorStr='#000000', GradientType=0);
+        background: -moz-linear-gradient(top, #444, #3b3b3b);
+        background: -webkit-gradient(linear,left top, left bottom, from(#444), to(#3b3b3b));
+        filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#444', EndColorStr='#3b3b3b', GradientType=0);
         
+    }
+
+    .editable-link {
+        border-radius: 5px;
+        padding: 5px 15px;
     }
     
     #editable-toolbar {
@@ -83,7 +89,7 @@
     /* --- FORM ----------------- */
     .editable-form {
         padding: 20px;
-        background: #eee;
+        background: #e0e0e0;
         border: 1px solid #000;
         -moz-box-shadow: 0 0 20px #000;
         -webkit-box-shadow: 0 0 20px #000;
@@ -97,6 +103,7 @@
         width: 100%;
         margin: .5em 0;
     }
+
     
     {% if not settings.FORMS_USE_HTML5 %}
     .editable-form input.datetimefield {
@@ -126,18 +133,32 @@
     .editable-form label {
         text-transform: capitalize !important;
         font-weight: bold !important;
-        line-height: 1.1em !important;
-        font-size: 15px !important;
-        color: #000 !important;
+        line-height: 16px !important;
+        font-size: 12px !important;
+        color: #444 !important;
     }
     .editable-form .button {
-        width: auto;
+        color: #fff;
         cursor: pointer;
         float: right;
+        font-size: 12px;
+        height: 25px;
         margin: 15px 0 0 15px;
         padding: 5px 15px;
-        -moz-box-shadow: 0 0 5px #666;
-        -webkit-box-shadow: 0 0 5px #666
+        width: auto;
+
+        background: -moz-linear-gradient(top, #309BBF, #2B8DAD);
+        background: -webkit-gradient(linear,left top, left bottom, from(#309BBF), to(#2B8DAD));
+        filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#309BBF', EndColorStr='#2B8DAD', GradientType=0);
+
+        border: none;
+        border-radius: 5px;
+    }
+
+    .editable-form .button:hover {
+        background: -moz-linear-gradient(top, #444, #3b3b3b);
+        background: -webkit-gradient(linear,left top, left bottom, from(#444), to(#3b3b3b));
+        filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#444', EndColorStr='#3b3b3b', GradientType=0);
     }
 </style>
 
@@ -151,7 +172,7 @@ if (typeof $ == 'undefined') {
         'ipt>');
 }
 </script>
-<script language="javascript" src="{{ settings.CONTENT_MEDIA_URL }}js/jquery.tools.min.js"></script>
+<script language="javascript" src="{{ settings.CONTENT_MEDIA_URL }}js/jquery.tools.js"></script>
 <script language="javascript" src="{{ settings.CONTENT_MEDIA_URL }}js/jquery.form.js"></script>
 <script language="javascript">
 
@@ -232,12 +253,12 @@ $(function($) {
         var toggle = $(this);
         var controls = $('.editable-link, ' +
             '#editable-toolbar *[id!=editable-toolbar-toggle]');
-        if (toggle.text() == '<<') {
-            toggle.text('>>');
+            if (toggle.text() == $("<div>&lArr;</div>").text() ) {
+            toggle.text( $("<div>&rArr;</div>").text() );
             controls.hide();
             document.cookie = cookie + '=1; path=/';
         } else {
-            toggle.text('<<');
+            toggle.text( $("<div>&lArr;</div>").text() );
             controls.show();
             document.cookie = cookie + '=; path=/';
         }
