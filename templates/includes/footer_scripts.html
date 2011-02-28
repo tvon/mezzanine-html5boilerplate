@@ -6,12 +6,14 @@
 
 <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
 
-<script src="{{ MEDIA_URL }}js/jquery-1.4.4.min.js"></script>
+<script src="{{ settings.CONTENT_MEDIA_URL }}js/jquery-1.4.4.min.js"></script>
+{% comment %}
 <script type="text/javascript">
     $(function(){
         $('#search input[type="text"]').tooltip()
     });
 </script>
+{% endcomment %}
 
 {% comment %}
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>

@@ -2,17 +2,15 @@
 
 {% spaceless %}
 <nav>
-    <div class="menu-header">
-        <ul id="menu-top-nav" class="menu">
-        {% for page in page_branch %}
-            {% if page.in_navigation %}
-            <li id="primary-menu-{{ page.html_id }}" 
-            class="{% if page.is_current_or_ascendant %}active{% endif %}{% if forloop.last %} last{% endif %} menu-item">
-                <a href="{% url page page.slug %}">{{ page.title }}</a>
-            </li>
-            {% endif %}
-        {% endfor %}
-        </ul>
-    </div>
+    <ul id="menu-top-nav" class="menu">
+    {% for page in page_branch %}
+        {% if page.in_navigation %}
+        <li id="primary-menu-{{ page.html_id }}" 
+        class="{% if page.is_current_or_ascendant %}active{% endif %}{% if forloop.last %} last{% endif %} menu-item">
+            <a href="{% url page page.slug %}">{{ page.title }}</a>
+        </li>
+        {% endif %}
+    {% endfor %}
+    </ul>
 </nav>
 {% endspaceless %}

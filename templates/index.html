@@ -1,11 +1,32 @@
 {% extends "base.html" %}
 
-{% load i18n %}
+{% load i18n blog_tags pages_tags page_helpers mezzanine_tags %}
 
-{% block title %}
-{% trans "Home" %}
-{% endblock %}
+{% block meta_title %}Mezzanine Site{% endblock %}
 
-{% block main %}
-{% trans "This is the homepage." %}
+{% block body_id %}home{% endblock %}
+
+{% block wrapper %}
+<div id="splash"></div>
+<div id="content">
+    {% page_by_slug index as homepage %}
+    {% if homepage %}
+    {% editable homepage.title %}<h1>{{ homepage.title }}</h1>{% endeditable %}
+    {% editable homepage.contentpage.content %}
+    {{ homepage.contentpage.content|safe }}
+    {% endeditable %}    
+    {% else %}
+    <em>You need to create a page with the slug 'index' to be displayed here.
+    {% endif %}
+</div>
+<div id="sidebar">
+    {% blog_recent_posts 5 as recent_posts %}
+    <ul>
+    {% for post in recent_posts %}
+    <li>
+        <h3>date</h3>
+        <a href="{% url blog_post_detail post.slug %}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+</div>
 {% endblock %}
