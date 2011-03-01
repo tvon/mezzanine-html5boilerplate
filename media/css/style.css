@@ -7,15 +7,14 @@ Mixture of html5boilerplate Wordpress and BreakFast theme from http://www.openso
 */
 
 /*
-http://css-tricks.com/box-sizing/
-Force <textarea> to have padding and border that cut into it’s 100% width instead of expanding it. 
+    http://css-tricks.com/box-sizing/
+    Force <textarea> to have padding and border that cut into it’s 100% width instead of expanding it. 
 */
 textarea {
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
 }
-
 
 * {
     /* Enable kerning and ligatures: http://www.aestheticallyloyal.com/public/optimize-legibility/ */
@@ -84,8 +83,8 @@ a:hover {
 /* We'll underline the paragraph links. */
 p a, p a:active, p a:visited { 
     border-bottom: 1px solid transparent;
-      -webkit-transition: border-color .65s;
-      font-weight: 500;
+    -webkit-transition: border-color .65s;
+    font-weight: 500;
 }
 
 p a:hover { 
@@ -236,13 +235,17 @@ body#home header {
 
 header #logo {
     float: left;
-    min-width: 280px;
+    padding: 0 5%;
 }
 
 header #logo h1 {
     text-align: center;
     padding-top: 20px;
     font-size: 182%;
+}
+
+header #logo h1 a:hover { 
+    color: #444;
 }
 
 header #logo h2 {
@@ -257,7 +260,6 @@ header nav {
 }
 
 header nav ul {
-    float: right;
     list-style: none;
 }
 
@@ -281,6 +283,11 @@ header nav ul a:hover {
     background: #3b3b3b;
 }
 
+header nav ul li.active a {
+    color: #fff;
+    background: #3b3b3b;
+}
+
 #content {
     float: left;
     width: 490px;
@@ -291,6 +298,26 @@ header nav ul a:hover {
     float: left;
     width: 200px;
     padding: 20px;
+}
+
+body#home #sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+body#home #sidebar ul li a,
+body#home #sidebar ul li a:hover {
+    color: #fff;
+}
+
+#sidebar h3 {
+    height: 17px;
+    padding: 0 10px;
+    background: #3b3b3b;
+    color: #fff;
+    font-size: 100%;
+    font-weight: normal;
 }
 
 /* Home */
@@ -349,15 +376,10 @@ textarea#comment {
     width:100%;
 }
 
-/* HERE */
-
 /* Sections and articles layouts */
-
 article, 
 section.post {
     margin: 0px;
-    padding: 40px 0;
-    /* border-bottom: 1px solid #eee; */
 }
 article header,
 section.post header {
@@ -368,8 +390,7 @@ article header h1 {
 }
 
 article footer,
-section.post footer
-{
+section.post footer {
     padding: 3px 0px;
     border-bottom: 1px solid #eee;
     border-top: 1px solid #eee;
@@ -397,7 +418,6 @@ article header time {
 
 article section > p:last-of-type:after {
     margin-left: 5px;
-    content: "☆";    
     color: #444;
 }
 
@@ -437,14 +457,28 @@ section.image cite {
 }
 
 /* Forms */
+form table td,
+form table th {
+    margin: 0;
+    padding: 6px;
+    vertical-align: top;
+}
+
+form table th {
+    text-align: right;
+    background: #fff;
+    border-right: 1px #bfbfbf solid;
+}
+
 label {
     display: block;
-    margin-top: 1em;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 input[type=text] {
-    width: 63%;
+    width: 98%;
+    padding: 2px;
+    border: 1px #bfbfbf solid;
 }
 
 #breadcrumb-menu ul {

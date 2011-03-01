@@ -10,9 +10,12 @@
     {% else %}
     {{ posted_comment_form.as_table }}
     {% endif %}
-    <tr><td colspan="2">
-    <input class="button" type="submit" value="{% trans "Comment" %}" />
-    </td></tr>
+        <tr>
+            <th style="border: none; background: #fff;">&nbsp;</th>
+            <td>
+                <input class="button" type="submit" value="{% trans "Comment" %}" />
+            </td>
+        </tr>
     </table>
 </form>
 

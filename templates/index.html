@@ -24,8 +24,10 @@
     <ul>
     {% for post in recent_posts %}
     <li>
-        <h3>date</h3>
-        <a href="{% url blog_post_detail post.slug %}">{{ post.title }}</a></li>
+        <h3><a href="{% url blog_post_detail post.slug %}">{{ post.title }}</a></h3>
+        <p>
+        </p>
+    </li>
     {% endfor %}
     </ul>
 </div>
