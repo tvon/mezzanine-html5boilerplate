@@ -11,15 +11,15 @@
     particular site's layout. If there's a better way of doing this then go 
     right ahead and fix it.
     */
-
+    
     #editable-toolbar, .editable-highlight, .editable-link {
         top: 0;
         left :0;
         z-index: 1000;
         display: none;
         position: absolute;
-        outline: none;
     }
+    
     #editable-loading {
         z-index: 10000;
         display: none;
@@ -27,6 +27,10 @@
     }
     #editable-toolbar {
         position: fixed;
+    }
+    
+      #editable-toolbar * {
+        outline: none;
     }
     
     .editable-highlight {
