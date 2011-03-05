@@ -1,0 +1,35 @@
+footer #development {
+  clear: both;
+  height: auto;
+}
+
+footer #development ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer #development ul li {
+  width: auto;
+  text-align: left;
+}
+
+footer #development ul li a {
+  background: #f0f0f0;
+  display: block;
+  padding: 4px;
+}
+
+footer #development ul li a:hover {
+  background: #444;
+  color: #f0f0f0;
+}
+
+footer #development ul.tree-menu-level-0 li {
+  margin: 2px;
+}
+
+footer #development ul.tree-menu-level-0 li nav {
+  width: auto;
+  margin-left: 40px;
+}

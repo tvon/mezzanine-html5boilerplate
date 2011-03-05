@@ -1,0 +1,24 @@
+{% load i18n pages_tags %}
+<div id="development">
+  <h3>CMS Sitemap</h3>
+  {# Show entire sitemap as tree, colorized depending on page attributes #}
+{% spaceless %}
+{% if page_branch %}
+<ul class="tree-menu-level-{{ branch_level }}">
+	{% for page in page_branch %}
+
+	<li class="{% if page.is_current_or_ascendant %}active{% endif %}{% if page.in_navigation %} in-navigation{% endif %}{% if not top_level and forloop.first %} first{% endif %}{% if forloop.last %} last{% endif %}" id="tree-menu-{{ page.html_id }}">
+  <a href="{% url page page.slug %}">{{ page.title }} [{{page.slug}}]</a>
+		{% page_menu page %}
+	</li>
+
+	{% endfor %}
+</ul>
+{% endif %}
+{% endspaceless %}
+</div>
+<p class="mezzanine">
+  {% trans "Powered by" %} 
+  <a href="http://mezzanine.jupo.org" target="_blank">Mezzanine</a><br />
+  <a href="{% url set_device "mobile" %}?next={{ request.path }}">{% trans "View Mobile Site." %}</a>
+</p>
