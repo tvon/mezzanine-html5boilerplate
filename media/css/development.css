@@ -15,14 +15,8 @@ footer #development ul li {
 }
 
 footer #development ul li a {
-  background: #f0f0f0;
   display: block;
   padding: 4px;
-}
-
-footer #development ul li a:hover {
-  background: #444;
-  color: #f0f0f0;
 }
 
 footer #development ul.tree-menu-level-0 li {
@@ -32,4 +26,35 @@ footer #development ul.tree-menu-level-0 li {
 footer #development ul.tree-menu-level-0 li nav {
   width: auto;
   margin-left: 40px;
+}
+
+footer #development ul.tree-menu-level-0 li.status-published a {
+  color: #090;
+  background-color: #cfc;
+  border: 1px #090 solid;
+}
+
+footer #development ul li.status-published a:hover {
+  background-color: #0c0;
+  color: #f0f0f0;
+  border: 1px #090 solid;
+}
+
+footer #development ul.tree-menu-level-0 li.status-draft a {
+  color: #090;
+  background-color: #cfc;
+  border: 1px #090 solid;
+}
+
+footer #development ul li.status-draft a:hover {
+  background-color: #0c0;
+  color: #f0f0f0;
+  border: 1px #090 solid;
+}
+
+footer #development ul li.login-required a {
+  background-image: url(data:image/gif;base64,R0lGODlhEAAQAMQfAO/v79GdFee+Su/TbvPdgMXFxevJXeO0OPrhkfz10v354v3328SCDti0If377dSlF+vr68mMEcfHx/rwucySEvvzx9XV1ditGvnsqNy2HMN/Dffnkvnadq2trf///////yH5BAEAAB8ALAAAAAAQABAAAAV24CeKXmmOKNmtrJeqniVLReeing2wq2TjnZ0pV7uphKZOceTJdCCdRibTUHYut6bHoVgkEpUJBhHIZhSYzYYwMAgOiIgZrWa74QzzIr1uvzkaZgl8dn+BJBmDdX4HgFkXCBySk5OHHx4PARQRDBqen5ZDoqIfIQA7);
+  background-position: 4px center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
 }

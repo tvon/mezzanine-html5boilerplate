@@ -7,7 +7,7 @@
 <ul class="tree-menu-level-{{ branch_level }}">
 	{% for page in page_branch %}
 
-	<li class="{% if page.is_current_or_ascendant %}active{% endif %}{% if page.in_navigation %} in-navigation{% endif %}{% if not top_level and forloop.first %} first{% endif %}{% if forloop.last %} last{% endif %}" id="tree-menu-{{ page.html_id }}">
+  <li class="{% if page.is_current_or_ascendant %}active{% endif %}{% if page.in_navigation %} in-navigation{% endif %}{% if not top_level and forloop.first %} first{% endif %}{% if forloop.last %} last{% endif %} status-{{page.get_status_display|lower}}{% if page.login_required %} login-required{% endif %}" id="tree-menu-{{ page.html_id }}">
   <a href="{% url page page.slug %}">{{ page.title }} [{{page.slug}}]</a>
 		{% page_menu page %}
 	</li>
