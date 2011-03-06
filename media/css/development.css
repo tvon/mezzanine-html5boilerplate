@@ -25,8 +25,15 @@ footer #development ul.tree-menu-level-0 li {
 
 footer #development ul.tree-menu-level-0 li nav {
   width: auto;
-  margin-left: 40px;
+  margin-left: 24px;
 }
+
+/* The idea is to get it to draw like a tree menu...
+footer #development ul.tree-menu-level-0 li nav li:before {
+  content: '&#8970;';
+  content: '⌊';
+}
+*/
 
 footer #development ul.tree-menu-level-0 li.status-published a {
   color: #090;
