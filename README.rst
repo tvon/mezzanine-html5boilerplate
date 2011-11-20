@@ -18,14 +18,14 @@ INSTALLED_APPS settings.
 
 Clone out **mezzanine-html5boilerplate** 
 
-	git clone git://github.com/tvon/mezzanine-html5boilerplate.git
+    git clone git://github.com/tvon/mezzanine-html5boilerplate.git
 
 Then just copy the directory out into your project like this:
 
 (Notice the the dash has changed to an underscore, probably a name like
 "mytheme" might work better)
 
-	myprojectroot/
+    myprojectroot/
 	            /mezzanine_html5boilerplate/
 	                                       /templates
 	                                       /templatetags
@@ -42,6 +42,6 @@ Then in settings.py change your INSTALLED_APPS so it looks like so:
 
 Then while you are working on modifying the theme, you will want to add:
 
-	THEME="mezzanine_html5boilerplate"
+    THEME="mezzanine_html5boilerplate"
 
 Which allow mezzanine to use the theme without installing it. 
